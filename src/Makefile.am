@@ -3,9 +3,9 @@ AM_CXXFLAGS = -Wall -Wextra \
               -Wctor-dtor-privacy -Woverloaded-virtual -Wchar-subscripts \
               -Wpointer-arith -Wcast-align -Wsign-compare
 
-bin_PROGRAMS = lomofile
+bin_PROGRAMS = tumblefile
 
-lomofile_SOURCES = \
+tumblefile_SOURCES = \
 	main.cc
 
 global_defines = \
@@ -17,6 +17,6 @@ global_defines = \
 #  -DGTKMM_DISABLE_DEPRECATED
 
 AM_CPPFLAGS = -I$(top_builddir) -I$(top_srcdir) $(global_defines) \
-               ${LOMOFILE_CFLAGS}
+               ${TUMBLEFILE_CFLAGS}
 
-lomofile_LDADD = ${LOMOFILE_LIBS}
+tumblefile_LDADD = ${TUMBLEFILE_LIBS}

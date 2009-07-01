@@ -18,4 +18,4 @@ stamp-h1
 src/.deps/
 src/*.o
 
-src/lomofile
+src/tumblefile

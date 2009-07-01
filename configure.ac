@@ -1,5 +1,5 @@
 
-AC_INIT([lomofile], [0.1], [marko.anastasov@gmail.com], [lomofile])
+AC_INIT([tumblefile], [0.1], [marko.anastasov@gmail.com], [tumblefile])
 AC_PREREQ(2.59)
 
 AC_CONFIG_SRCDIR([src/main.cc])
@@ -59,12 +59,12 @@ AC_SUBST([GIOMM_LIBS])
 # LIBS and CFLAGS definitions
 # *************************************
 
-LOMOFILE_LIBS="$GIOMM_LIBS"
+TUMBLEFILE_LIBS="$GIOMM_LIBS"
 
-LOMOFILE_CFLAGS="$GIOMM_CFLAGS"
+TUMBLEFILE_CFLAGS="$GIOMM_CFLAGS"
 
-AC_SUBST(LOMOFILE_LIBS)
-AC_SUBST(LOMOFILE_CFLAGS)
+AC_SUBST(TUMBLEFILE_LIBS)
+AC_SUBST(TUMBLEFILE_CFLAGS)
 
 # *************************************
 # Prepare for make
