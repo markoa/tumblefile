@@ -67,24 +67,35 @@ init_todays_dir()
 }
 
 void
-copy_file(const Glib::ustring& dir_path, const Glib::RefPtr<Gio::File>& file)
+move_file(const Glib::ustring& dir_path, const Glib::RefPtr<Gio::File>& file)
 {
     Glib::ustring timestamp, target_path;
     Glib::RefPtr<Gio::File> destination;
+
+    if (! file->query_exists()) {
+        cout << "Skipping " << file->get_path() << " (file does not exist)" << endl;
+        return;
+    }
 
     timestamp = get_timestamp("%Y%m%d.%H%M.");
     target_path = dir_path + timestamp + file->get_basename();
     destination = Gio::File::create_for_path(target_path);
 
-    cout << "cp " << file->get_path() << " " << target_path << endl;
-    file->copy(destination);
+    cout << file->get_path() << " → " << target_path << endl;
+
+    try {
+        file->move(destination);
+    } catch (const Gio::Error& ex) {
+        cerr << "Failed to move file " << file->get_path();
+        cerr << ": " << ex.what() << endl;
+    }
 }
 
 void
 process_commandline_path(const Glib::ustring& dir_path, const std::string& arg)
 {
     Glib::RefPtr<Gio::File> file = Gio::File::create_for_commandline_arg(arg);
-    copy_file(dir_path, file);
+    move_file(dir_path, file);
 }
 
 int
