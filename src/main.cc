@@ -7,6 +7,8 @@
 #include <glib.h>
 #include <glib/gprintf.h>
 #include <giomm.h>
+#include <gtkmm/main.h>
+#include "main-window.hh"
 
 using namespace std;
 
@@ -109,6 +111,11 @@ main(int argc, char** argv)
         for (int i = 0; i < argc-1; ++i) {
             process_commandline_path(todays_path, argv[i+1]);
         }
+    } else {
+        Gtk::Main kit(argc, argv);
+        MainWindow main_window;
+        main_window.show();
+        Gtk::Main::run();
     }
     
     return 0;

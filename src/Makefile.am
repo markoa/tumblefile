@@ -6,15 +6,19 @@ AM_CXXFLAGS = -Wall -Wextra \
 bin_PROGRAMS = tumblefile
 
 tumblefile_SOURCES = \
-	main.cc
+	main.cc \
+	main-window.cc \
+	main-window.hh \
+	tray-icon.cc \
+	tray-icon.hh
 
 global_defines = \
   -DPREFIX=\""$(prefix)"\" \
   -DSYSCONFDIR=\""$(sysconfdir)"\" \
   -DLIBDIR=\""$(libdir)"\" \
   -DDATADIR=\""$(datadir)"\" \
-  -DLOMOFILE_PKGDATADIR=\""$(pkgdatadir)"\"
-#  -DGTKMM_DISABLE_DEPRECATED
+  -DTUMBLEFILE_PKGDATADIR=\""$(pkgdatadir)"\" \
+  -DGTKMM_DISABLE_DEPRECATED
 
 AM_CPPFLAGS = -I$(top_builddir) -I$(top_srcdir) $(global_defines) \
                ${TUMBLEFILE_CFLAGS}
