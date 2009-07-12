@@ -10,9 +10,10 @@ MainWindow::MainWindow()
     tray_icon_(*this)
 {
     set_border_width(10);
-    set_size_request(200, 150);
+    set_size_request(300, 200);
 
-    label_.set_markup("<span size='large'>Tumblefile is running.</span>"),
+    label_.set_line_wrap();
+    label_.set_markup("<span size='large'>Tumblefile is running.</span>\n\n<span>It will timestamp and move your files\nfrom Desktop to Documents every 5 minutes.</span>"),
   
     hide_button_.signal_clicked().connect(sigc::mem_fun(*this,
                 &MainWindow::toggle_hide));
