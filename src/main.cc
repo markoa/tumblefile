@@ -114,6 +114,8 @@ main(int argc, char** argv)
     } else {
         Gtk::Main kit(argc, argv);
         MainWindow main_window;
+        // By not attaching window to run(), hiding the window will not
+        // invoke Gtk::main::quit() automatically.
         main_window.show();
         Gtk::Main::run();
     }

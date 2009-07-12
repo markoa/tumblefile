@@ -11,7 +11,7 @@ TrayIcon::TrayIcon(MainWindow& w) :
     status_icon_->signal_activate().connect(
             sigc::mem_fun(*this, &TrayIcon::active_main_window));
 
-    status_icon_->set_tooltip("tumblefile");
+    set_tooltip();
 }
 
 TrayIcon::~TrayIcon()
@@ -22,4 +22,15 @@ void
 TrayIcon::active_main_window()
 {
     main_window_.toggle_hide();
+    set_tooltip();
+}
+
+void
+TrayIcon::set_tooltip()
+{
+    if (main_window_.is_visible()) {
+        status_icon_->set_tooltip("Tumblefile – click to hide the window");
+    } else {
+        status_icon_->set_tooltip("Tumblefile – click to show the window");
+    }
 }

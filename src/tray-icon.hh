@@ -11,6 +11,7 @@ public:
     ~TrayIcon();
 private:
     void active_main_window();
+    void set_tooltip();
 
     MainWindow& main_window_;
     Glib::RefPtr<Gtk::StatusIcon> status_icon_;
