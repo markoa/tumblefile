@@ -1,7 +1,19 @@
 
 #include <iostream>
 #include <gtkmm.h>
+#include "engine.hh"
 #include "main-window.hh"
+
+namespace tf {
+
+bool
+timeout_handler()
+{
+    engine::visit_desktop();
+    return true; // always continue execution
+}
+
+const int FIVE_MINUTES = 300;
 
 MainWindow::MainWindow()
 :
@@ -13,7 +25,7 @@ MainWindow::MainWindow()
     set_size_request(300, 200);
 
     label_.set_line_wrap();
-    label_.set_markup("<span size='large'>Tumblefile is running.</span>\n\n<span>It will timestamp and move your files\nfrom Desktop to Documents every 5 minutes.</span>"),
+    label_.set_markup("<span size='large'>Tumblefile is running.</span>\n\n<span>It will timestamp and move files from\nDesktop to Documents every 5 minutes.</span>"),
   
     hide_button_.signal_clicked().connect(sigc::mem_fun(*this,
                 &MainWindow::toggle_hide));
@@ -28,6 +40,8 @@ MainWindow::MainWindow()
     add(vbox_);
 
     show_all_children();
+
+    Glib::signal_timeout().connect_seconds(sigc::ptr_fun(&timeout_handler), FIVE_MINUTES);
 }
 
 MainWindow::~MainWindow()
@@ -59,3 +73,5 @@ MainWindow::on_quit_button_clicked()
 {
     Gtk::Main::quit();
 }
+
+} // namespace tf

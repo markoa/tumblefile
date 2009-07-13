@@ -3,6 +3,8 @@
 #include "tray-icon.hh"
 #include "main-window.hh"
 
+namespace tf {
+
 TrayIcon::TrayIcon(MainWindow& w) :
     main_window_(w)
 {
@@ -34,3 +36,5 @@ TrayIcon::set_tooltip()
         status_icon_->set_tooltip("Tumblefile – click to show the window");
     }
 }
+
+} // namespace tf

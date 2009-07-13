@@ -6,6 +6,8 @@
 #include <utility>
 #include "tray-icon.hh"
 
+namespace tf {
+
 class MainWindow : public Gtk::Window
 {
 public:
@@ -27,5 +29,7 @@ protected:
     TrayIcon tray_icon_;
     std::pair<int, int> window_position_;
 };
+
+} // namespace tf
 
 #endif // __TUMBLEFILE_MAIN_WINDOW__

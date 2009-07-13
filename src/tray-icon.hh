@@ -3,6 +3,8 @@
 
 #include <gtkmm/statusicon.h>
 
+namespace tf {
+
 class MainWindow;
 
 class TrayIcon {
@@ -16,5 +18,7 @@ private:
     MainWindow& main_window_;
     Glib::RefPtr<Gtk::StatusIcon> status_icon_;
 };
+
+} // namespace tf
 
 #endif // _TRAY_ICON_HH_

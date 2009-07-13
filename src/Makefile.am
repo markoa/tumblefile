@@ -6,6 +6,8 @@ AM_CXXFLAGS = -Wall -Wextra \
 bin_PROGRAMS = tumblefile
 
 tumblefile_SOURCES = \
+	engine.cc \
+	engine.hh \
 	main.cc \
 	main-window.cc \
 	main-window.hh \
