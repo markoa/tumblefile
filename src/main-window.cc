@@ -41,7 +41,8 @@ MainWindow::MainWindow()
 
     show_all_children();
 
-    Glib::signal_timeout().connect_seconds(sigc::ptr_fun(&timeout_handler), FIVE_MINUTES);
+    Glib::signal_timeout().connect_seconds(
+            sigc::ptr_fun(&timeout_handler), FIVE_MINUTES);
 }
 
 MainWindow::~MainWindow()

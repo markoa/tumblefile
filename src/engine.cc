@@ -28,7 +28,6 @@ enumerate_files(const std::string& dir_path, list<string>& paths)
         string path = Glib::build_filename(dir_path, *it);
 
         if (Glib::file_test(path, Glib::FILE_TEST_IS_REGULAR)) {
-            cout << path << endl;
             paths.push_back(path);
         }
     }
@@ -143,9 +142,8 @@ visit_desktop()
     list<string>::iterator end(file_paths.end());
 
     for ( ; it != end; ++it) {
-        //Glib::RefPtr<Gio::File> file = Gio::File::create_for_path(*it);
-        //move_file(todays_path, file);
-        cout << *it << endl;
+        Glib::RefPtr<Gio::File> file = Gio::File::create_for_path(*it);
+        move_file(todays_path, file);
     }
 }
 
