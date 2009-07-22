@@ -115,7 +115,7 @@ move_file(const Glib::ustring& dir_path, const Glib::RefPtr<Gio::File>& file)
     cout << file->get_path() << " → " << target_path << endl;
 
     try {
-        file->move(destination);
+        file->move(destination, Gio::FILE_COPY_ALL_METADATA);
     } catch (const Gio::Error& ex) {
         cerr << "Failed to move file " << file->get_path();
         cerr << ": " << ex.what() << endl;
