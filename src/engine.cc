@@ -27,7 +27,9 @@ enumerate_files(const std::string& dir_path, list<string>& paths)
     for ( ; it != end; ++it) {
         string path = Glib::build_filename(dir_path, *it);
 
-        if (Glib::file_test(path, Glib::FILE_TEST_IS_REGULAR)) {
+        if (Glib::file_test(
+                    path,
+                    (Glib::FILE_TEST_IS_REGULAR | Glib::FILE_TEST_IS_DIR))) {
             paths.push_back(path);
         }
     }
