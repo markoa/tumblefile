@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=@PACKAGE_VERSION@
+Encoding=UTF-8
+Type=Application
+_Name=Tumblefile
+_Comment=Reclaim your Desktop
+Icon=@PACKAGE@
+Exec=@PACKAGE@
+Categories=GNOME;Application;Utility;

@@ -1,5 +1,5 @@
 
-SUBDIRS = src
+SUBDIRS = data src
 
 dist_noinst_SCRIPTS = autogen.sh
 

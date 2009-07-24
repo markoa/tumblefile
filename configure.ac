@@ -45,6 +45,21 @@ AC_CANONICAL_HOST
 AC_LANG_CPLUSPLUS
 
 # *************************************
+# Internationalization support
+# *************************************
+# To add a new language, add language code xx to po/LINGUAS
+IT_PROG_INTLTOOL([0.35.0])
+
+GETTEXT_PACKAGE=tumblefile
+AC_SUBST(GETTEXT_PACKAGE)
+AC_DEFINE_UNQUOTED([GETTEXT_PACKAGE], ["$GETTEXT_PACKAGE"],
+                   [The domain to use with gettext])
+AM_GLIB_GNU_GETTEXT
+
+TUMBLEFILE_LOCALEDIR=[${datadir}/locale]
+AC_SUBST(TUMBLEFILE_LOCALEDIR)
+
+# *************************************
 # Library checks
 # *************************************
 PKG_CHECK_MODULES([GTKMM], [gtkmm-2.4 >= 2.16.0])
@@ -76,6 +91,9 @@ AC_PROG_INSTALL
 # Generate the files:
 AC_CONFIG_FILES([
     Makefile
+    data/Makefile
+    data/tumblefile.desktop.in
+    po/Makefile.in
     src/Makefile
 ])
 

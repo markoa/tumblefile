@@ -23,6 +23,7 @@ global_defines = \
   -DGTKMM_DISABLE_DEPRECATED
 
 AM_CPPFLAGS = -I$(top_builddir) -I$(top_srcdir) $(global_defines) \
-               ${TUMBLEFILE_CFLAGS}
+               ${TUMBLEFILE_CFLAGS} \
+	       -DTUMBLEFILE_LOCALEDIR=\"${TUMBLEFILE_LOCALEDIR}\"
 
 tumblefile_LDADD = ${TUMBLEFILE_LIBS}
