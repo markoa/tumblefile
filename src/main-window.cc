@@ -1,5 +1,6 @@
 
 #include <iostream>
+#include <glib/gi18n.h>
 #include <gtkmm.h>
 #include "engine.hh"
 #include "main-window.hh"
@@ -17,7 +18,7 @@ const int FIVE_MINUTES = 300;
 
 MainWindow::MainWindow()
 :
-    hide_button_("Hide"),
+    hide_button_(_("Hide")),
     quit_button_(Gtk::Stock::QUIT),
     tray_icon_(*this)
 {
@@ -25,7 +26,7 @@ MainWindow::MainWindow()
     set_size_request(300, 200);
 
     label_.set_line_wrap();
-    label_.set_markup("<span size='large'>Tumblefile is running.</span>\n\n<span>It will timestamp and move files from\nDesktop to Documents every 5 minutes.</span>"),
+    label_.set_markup(_("<span size='large'>Tumblefile is running.</span>\n\n<span>It will timestamp and move files from\nDesktop to Documents every 5 minutes.</span>")),
   
     hide_button_.signal_clicked().connect(sigc::mem_fun(*this,
                 &MainWindow::toggle_hide));
