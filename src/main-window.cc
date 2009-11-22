@@ -26,7 +26,7 @@ MainWindow::MainWindow()
     set_size_request(300, 200);
 
     label_.set_line_wrap();
-    label_.set_markup(_("<span size='large'>Tumblefile is running.</span>\n\n<span>It will timestamp and move files from\nDesktop to Documents every 5 minutes.</span>")),
+    label_.set_markup(get_app_description());
   
     hide_button_.signal_clicked().connect(sigc::mem_fun(*this,
                 &MainWindow::toggle_hide));
@@ -74,6 +74,19 @@ void
 MainWindow::on_quit_button_clicked()
 {
     Gtk::Main::quit();
+}
+
+Glib::ustring
+MainWindow::get_app_description()
+{
+    Glib::ustring desc("<span size='large'>");
+
+    desc += _("Tumblefile is running.");
+    desc += "</span>\n\n<span>";
+    desc += _("It will timestamp and move files from Desktop\nto Documents every 5 minutes.");
+    desc += "</span>";
+
+    return desc;
 }
 
 } // namespace tf

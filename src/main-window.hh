@@ -21,6 +21,8 @@ protected:
 
     void on_quit_button_clicked();
 
+    Glib::ustring get_app_description();
+
     Gtk::VBox vbox_;
     Gtk::Label label_;
     Gtk::HBox button_box_;
