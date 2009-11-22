@@ -53,7 +53,7 @@ MainWindow::~MainWindow()
 void
 MainWindow::toggle_hide()
 {
-    if (is_visible()) {
+    if (get_visible()) {
         get_position(window_position_.first, window_position_.second);
         hide();
     }

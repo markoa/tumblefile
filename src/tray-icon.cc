@@ -30,10 +30,10 @@ TrayIcon::active_main_window()
 void
 TrayIcon::set_tooltip()
 {
-    if (main_window_.is_visible()) {
-        status_icon_->set_tooltip("Tumblefile – click to hide the window");
+    if (main_window_.get_visible()) {
+        status_icon_->set_tooltip_text("Tumblefile – click to hide the window");
     } else {
-        status_icon_->set_tooltip("Tumblefile – click to show the window");
+        status_icon_->set_tooltip_text("Tumblefile – click to show the window");
     }
 }
 
