@@ -1,5 +1,6 @@
 
 #include <gtkmm/stock.h>
+#include <glib/gi18n.h>
 #include "tray-icon.hh"
 #include "main-window.hh"
 
@@ -31,9 +32,13 @@ void
 TrayIcon::set_tooltip()
 {
     if (main_window_.get_visible()) {
-        status_icon_->set_tooltip_text("Tumblefile – click to hide the window");
+        status_icon_->set_tooltip_text(
+                _("Tumblefile – click to hide the window")
+                );
     } else {
-        status_icon_->set_tooltip_text("Tumblefile – click to show the window");
+        status_icon_->set_tooltip_text(
+                _("Tumblefile – click to show the window")
+                );
     }
 }
 
