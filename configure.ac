@@ -1,5 +1,5 @@
 
-AC_INIT([tumblefile], [1.0], [marko.anastasov@gmail.com], [tumblefile])
+AC_INIT([tumblefile], [1.2], [marko.anastasov@gmail.com], [tumblefile])
 AC_PREREQ(2.59)
 
 AC_CONFIG_SRCDIR([src/main.cc])
