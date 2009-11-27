@@ -22,8 +22,7 @@ MainWindow::MainWindow()
     quit_button_(Gtk::Stock::QUIT),
     tray_icon_(*this)
 {
-    set_border_width(10);
-    set_size_request(300, 200);
+    set_size_request(350, 200);
 
     label_.set_line_wrap();
     label_.set_markup(get_app_description());
@@ -83,7 +82,7 @@ MainWindow::get_app_description()
 
     desc += _("Tumblefile is running.");
     desc += "</span>\n\n<span>";
-    desc += _("It will timestamp and move files from Desktop\nto Documents every 5 minutes.");
+    desc += _("It will timestamp and move files from Desktop to Documents every 5 minutes.");
     desc += "</span>";
 
     return desc;
