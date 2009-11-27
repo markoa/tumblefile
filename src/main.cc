@@ -16,13 +16,12 @@ main(int argc, char** argv)
     GError *error = 0;
     GOptionContext *context;
 
-    static const GOptionEntry entries[] =
-    {
-        { "version", 'v', 0, G_OPTION_ARG_NONE, &show_version, _("Show version information and exit"), NULL },
-        { "minimized", 'm', 0, G_OPTION_ARG_NONE, &run_minimized, _("Run with window minimized to tray"), NULL },
+    // C/C++ incompatibility: normal C initialization yields warnings
+    static const GOptionEntry version = { "version", 'v', 0, G_OPTION_ARG_NONE, &show_version, _("Show version information and exit"), NULL };
+    static const GOptionEntry minimized = { "minimized", 'm', 0, G_OPTION_ARG_NONE, &run_minimized, _("Run with window minimized to tray"), NULL };
+    static GOptionEntry nil;
 
-        { NULL }
-    };
+    static const GOptionEntry entries[] = { version, minimized, nil };
 
     Gio::init();
 
