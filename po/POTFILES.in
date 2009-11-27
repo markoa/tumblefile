@@ -1,2 +1,4 @@
 data/tumblefile.desktop.in.in
+src/main.cc
 src/main-window.cc
+src/tray-icon.cc
