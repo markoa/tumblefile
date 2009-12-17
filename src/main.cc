@@ -30,7 +30,7 @@ main(int argc, char** argv)
     g_option_context_add_group(context, gtk_get_option_group (TRUE));
 
     if (!g_option_context_parse(context, &argc, &argv, &error)) {
-        std::cout << "Option parsing failed: " << error->message << std::endl;
+        g_error("Option parsing failed: %s", error->message);
         exit(1);
     }
 
@@ -48,15 +48,19 @@ main(int argc, char** argv)
         for (int i = 0; i < argc-1; ++i)
             tf::engine::process_commandline_path(todays_path, argv[i+1]);
     } else {
-        Gtk::Main kit(argc, argv);
-        tf::MainWindow main_window;
+        try {
+            Gtk::Main kit(argc, argv);
+            tf::MainWindow main_window;
 
-        // By not attaching window to run(), hiding the window will not
-        // invoke Gtk::main::quit() automatically.
-        if (!run_minimized)
-            main_window.show();
+            // By not attaching window to run(), hiding the window will not
+            // invoke Gtk::main::quit() automatically.
+            if (!run_minimized)
+                main_window.show();
 
-        Gtk::Main::run();
+            Gtk::Main::run();
+        } catch (const std::exception& ex) {
+            g_error("Uncaught exception: %s", ex.what());
+        }
     }
 
     return 0;
