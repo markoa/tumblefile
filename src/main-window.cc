@@ -41,6 +41,8 @@ MainWindow::MainWindow()
 
     show_all_children();
 
+    set_default_icon_name("tumblefile");
+
     Glib::signal_timeout().connect_seconds(
             sigc::ptr_fun(&timeout_handler), FIVE_MINUTES);
 }

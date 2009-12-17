@@ -1,3 +1,4 @@
+SUBDIRS=icons
 
 desktopdir = $(datadir)/applications
 desktop_in_files = tumblefile.desktop.in

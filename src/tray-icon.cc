@@ -9,7 +9,7 @@ namespace tf {
 TrayIcon::TrayIcon(MainWindow& w) :
     main_window_(w)
 {
-    status_icon_ = Gtk::StatusIcon::create(Gtk::Stock::YES);
+    status_icon_ = Gtk::StatusIcon::create("tumblefile");
 
     status_icon_->signal_activate().connect(
             sigc::mem_fun(*this, &TrayIcon::active_main_window));
