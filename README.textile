@@ -20,7 +20,7 @@ Download "the latest tarball":http://github.com/markoa/tumblefile/downloads, the
 
 h2. How to use
 
-To launch Tumblefile automatically on desktop startup, do the following. From the GNOME menu, go to System > Preferences > Startup Applications. Click Add and enter 'Tumblefile' as name and '/usr/local/bin/tumblefile -m' as command<sup><a href="#fn1">1</a></sup>.
+To launch Tumblefile automatically on desktop startup, do the following. From the GNOME menu, go to System > Preferences > Startup Applications. Click Add and enter 'Tumblefile' as name and '/usr/local/bin/tumblefile -m' as command<sup>1</sup>.
 
 Tumblefile also works from command line. From terminal, you can type
 
@@ -28,7 +28,7 @@ Tumblefile also works from command line. From terminal, you can type
 
 and it will move the files in the usual way.
 
-fn1. <small>This is the default installation path, those who modified the prefix at configure time should change it accordingly.</small>
+<small><sup>1</sup> This is the default installation path, those who modified the prefix at configure time should change it accordingly.</small>
 
 h2. License
 
