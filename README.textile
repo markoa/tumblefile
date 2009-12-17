@@ -28,7 +28,7 @@ Tumblefile also works from command line. From terminal, you can type
 
 and it will move the files in the usual way.
 
-<small>fn1. This is the default installation path, those who modified the prefix at configure time should change it accordingly.</small>
+fn1. <small>This is the default installation path, those who modified the prefix at configure time should change it accordingly.</small>
 
 h2. License
 
