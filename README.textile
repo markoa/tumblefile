@@ -4,15 +4,15 @@ An automatic, chronological file organizer for GNOME Linux.
 
 Every five minutes Tumblefile copies all files on your Desktop to a folder such as ~/Documents/2009-07-July/25-Saturday, prepending a timestamp (like 20090727.1645) to the filename. Meanwhile its little window sits in the system tray. It is a way to automatically keep your Desktop cleared and files organized.
 
-Kudos for the original idea goes to Luke Crawford's "drefile for OS X":
-http://tlvx.net/post/130689108/drefile-an-automatic-chronological-file
+Kudos for the original idea goes to Luke Crawford's "drefile for OS X":http://tlvx.net/post/130689108/drefile-an-automatic-chronological-file.
 
 h2. Installation
+
+Download "the latest tarball":http://github.com/markoa/tumblefile/downloads, then compile it:
 
 <pre><code>  # On Debian-based systems:
   sudo apt-get install libgtkmm-2.4-dev
 
-  # unpack the tumblefile "archive":http://github.com/markoa/tumblefile/downloads
   tar -xzvf tumblefile-x.y.tar.gz
   ./configure
   make
@@ -20,13 +20,15 @@ h2. Installation
 
 h2. How to use
 
-To launch Tumblefile automatically on desktop startup, do the following. From the GNOME menu, go to System > Preferences > Startup Applications. Click Add and enter 'Tumblefile' as name and '/usr/local/bin/tumblefile -m' as command. This is the default installation path, those who modified the prefix at configure time should change it accordingly.
+To launch Tumblefile automatically on desktop startup, do the following. From the GNOME menu, go to System > Preferences > Startup Applications. Click Add and enter 'Tumblefile' as name and '/usr/local/bin/tumblefile -m' as command<sup><a href="#fn1">1</a></sup>.
 
-Tumblefile also has a minimal command line interface. From terminal, you can type
+Tumblefile also works from command line. From terminal, you can type
 
-<pre></code>  $ tumblefile /path/to/file1 /path/to/file2</code></pre>
+<pre><code>  $ tumblefile /path/to/file1 /path/to/file2</code></pre>
 
 and it will move the files in the usual way.
+
+<small>fn1. This is the default installation path, those who modified the prefix at configure time should change it accordingly.</small>
 
 h2. License
 

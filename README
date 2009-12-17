@@ -9,6 +9,8 @@ keep your Desktop cleared and files organized.
 Kudos for the original idea goes to drefile for OS X:
 http://tlvx.net/post/130689108/drefile-an-automatic-chronological-file
 
+To launch Tumblefile automatically on desktop startup, do the following. From the GNOME menu, go to System > Preferences > Startup Applications. Click Add and enter 'Tumblefile' as name and '/usr/local/bin/tumblefile -m' as command. Adjust the prefix if you've changed it an configure time.
+
 Tumblefile requires gtkmm library and is GPL licensed.
 
 Written in the summer of 2009 by Marko Anastasov.
