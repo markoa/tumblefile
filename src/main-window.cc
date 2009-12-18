@@ -14,6 +14,14 @@ timeout_handler()
     return true; // always continue execution
 }
 
+bool
+startup_timeout_handler()
+{
+    engine::setup_autostart();
+    return false; // run only once
+}
+
+const int FOUR_SECONDS = 4;
 const int FIVE_MINUTES = 300;
 
 MainWindow::MainWindow()
@@ -45,6 +53,9 @@ MainWindow::MainWindow()
 
     Glib::signal_timeout().connect_seconds(
             sigc::ptr_fun(&timeout_handler), FIVE_MINUTES);
+
+    Glib::signal_timeout().connect_seconds(
+            sigc::ptr_fun(&startup_timeout_handler), FOUR_SECONDS);
 }
 
 MainWindow::~MainWindow()

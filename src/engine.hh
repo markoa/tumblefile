@@ -15,6 +15,8 @@ void process_commandline_path(const Glib::ustring& dir_path, const std::string& 
 
 void visit_desktop();
 
+void setup_autostart();
+
 } // namespace engine
 
 } // namespace tf

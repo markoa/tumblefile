@@ -2,6 +2,7 @@
 #include <time.h>
 #include <sys/time.h>
 #include <sys/stat.h>
+#include <fstream>
 #include <iostream>
 #include <list>
 #include <string>
@@ -147,6 +148,27 @@ visit_desktop()
         Glib::RefPtr<Gio::File> file = Gio::File::create_for_path(*it);
         move_file(todays_path, file);
     }
+}
+
+void
+setup_autostart()
+{
+    string autostart_file_path(Glib::get_user_config_dir() + G_DIR_SEPARATOR +
+            "autostart" + G_DIR_SEPARATOR + "tumblefile.desktop");
+    
+    if (Glib::file_test(autostart_file_path, (Glib::FILE_TEST_EXISTS))) {
+        return;
+    }
+
+    std::ofstream as_file;
+    as_file.open(autostart_file_path.c_str(), ios::out);
+    as_file << "[Desktop Entry]\n";
+    as_file << "Type=Application\n";
+    as_file << "Exec=/usr/bin/tumblefile -m\n";
+    as_file << "X-GNOME-Autostart-enabled=true\n";
+    as_file << "Name=Tumblefile\n";
+    as_file << "Comment=Automatically organize files from Desktop\n";
+    as_file.close();
 }
 
 } // namespace engine

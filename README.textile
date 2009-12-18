@@ -18,17 +18,15 @@ Download "the latest tarball":http://github.com/markoa/tumblefile/downloads, the
   make
   sudo make install</code></pre>
 
-h2. How to use
+h2. How it runs
 
-To launch Tumblefile automatically on desktop startup, do the following. From the GNOME menu, go to System > Preferences > Startup Applications. Click Add and enter 'Tumblefile' as name and '/usr/local/bin/tumblefile -m' as command<sup>1</sup>.
+When you launch Tumblefile for the first time, it will set up what it takes to run automatically the next time log in. You can turn that off in System > Preferences > Startup Applications.
 
 Tumblefile also works from command line. From terminal, you can type
 
 <pre><code>  $ tumblefile /path/to/file1 /path/to/file2</code></pre>
 
 and it will move the files in the usual way.
-
-<small><sup>1</sup> This is the default installation path, those who modified the prefix at configure time should change it accordingly.</small>
 
 h2. License
 
