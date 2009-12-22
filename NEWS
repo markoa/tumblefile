@@ -1,0 +1,20 @@
+= 1.2
+
+ * Application sets itself up to run automatically on desktop startup,
+   accepts -m option to run minimized.
+
+ * New application icon.
+
+ * Available in following translations:
+
+     * Danish (Joe Hansen)
+     * German and Low German (Nils-Christoph Fiedler)
+     * Brazilian Portuguese (Djavan Fagundes)
+     * Swedish (Daniel Nylander)
+
+ * Replaced use of some deprecated functions in code, which can cause
+   build problems with recent versions of gtkmm.
+
+= 1.0
+
+ * First release.
